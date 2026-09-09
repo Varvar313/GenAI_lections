@@ -8,6 +8,7 @@ from decouple import config
 from .tool_calculator import CalculatorTool
 from .tool_websearch import WebSearchTool
 from .tool_pdfinfo import PDFInfoTool
+from .tool_qrdecoder import QRDecoderTool
 
 class LLMAgent:
     """
@@ -46,6 +47,12 @@ class LLMAgent:
             "pdf_info": PDFInfoTool(),
         }
         self.conversation_history = []
+        self.tools = {
+            "calculator": CalculatorTool(),
+            "web_search": WebSearchTool(),
+            "pdf_info": PDFInfoTool(),
+            "qr_decoder": QRDecoderTool(),
+        }
     
     def _make_api_request(self, payload: Dict, headers: Optional[Dict] = None) -> Dict:
         """
