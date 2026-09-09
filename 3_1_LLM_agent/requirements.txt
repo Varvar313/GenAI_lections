@@ -5,3 +5,6 @@ ddgs
 pytest
 pypdf
 pdfplumber
+pyzbar
+qrcode
+Pillow
